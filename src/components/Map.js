@@ -13,6 +13,8 @@ const center = {
   lng: 135.8441
 };
 
+const libraries = ['places', 'directions'];
+
 /**
  * 地図表示とルート計算を担当するコンポーネント
  * @param {object} props - spots, itinerary, startPoint, onSetStartPoint を含むプロパティ
@@ -80,7 +82,7 @@ const Map = ({ spots, itinerary, startPoint, onSetStartPoint }) => {
   return (
     <LoadScript
       googleMapsApiKey={apiKey}
-      libraries={['places', 'directions']} // 使用するライブラリを指定
+      libraries={libraries} // 使用するライブラリを指定
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
