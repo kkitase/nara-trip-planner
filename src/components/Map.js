@@ -25,8 +25,8 @@ const Map = ({ spots, itinerary, startPoint, onSetStartPoint }) => {
 
   // itineraryかstartPointが変更された時にルート検索を実行するeffect
   useEffect(() => {
-    // 出発点か旅程が空の場合はルートをクリアして終了
-    if (!startPoint || itinerary.length === 0) {
+    // Google Maps APIがロードされていない、または出発点か旅程が空の場合はルートをクリアして終了
+    if (!window.google || !startPoint || itinerary.length === 0) {
       setDirections(null);
       return;
     }
