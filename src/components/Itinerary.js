@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Itinerary = ({ startPoint, itinerary, onMoveSpot }) => {
+const Itinerary = ({ startPoint, itinerary, onMoveSpot, onSaveItinerary, onClearItinerary }) => {
   return (
     <div className="mb-4">
       <h2 className="h5">旅程</h2>
@@ -38,6 +38,16 @@ const Itinerary = ({ startPoint, itinerary, onMoveSpot }) => {
           <li className="list-group-item">観光地が追加されていません</li>
         )}
       </ul>
+      {itinerary.length > 0 && (
+        <div className="mt-3">
+          <button className="btn btn-primary me-2" onClick={onSaveItinerary}>
+            旅程を保存
+          </button>
+          <button className="btn btn-danger" onClick={onClearItinerary}>
+            旅程をクリア
+          </button>
+        </div>
+      )}
     </div>
   );
 };
