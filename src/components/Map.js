@@ -80,7 +80,7 @@ const Map = ({ spots, itinerary, startPoint, onSetStartPoint }) => {
   return (
     <LoadScript
       googleMapsApiKey={apiKey}
-      libraries={['places']} // 使用するライブラリを指定
+      libraries={['places', 'directions']} // 使用するライブラリを指定
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
