@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# 奈良 観光プランナー (Nara Trip Planner)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+このプロジェクトは、奈良の観光計画を立てるためのインタラクティブな Web アプリケーションです。
+[Create React App](https://github.com/facebook/create-react-app) をベースに構築されています。
 
-## Available Scripts
+## 主な機能
 
-In the project directory, you can run:
+- **観光地リスト表示:** 奈良の主要な観光地を写真付きのカードで表示します。
+- **インタラクティブマップ:** 
+    - Google Maps 上に観光地の場所をマーカーで表示します。
+    - 地図上をクリックして、自由に出発点を設定できます。
+- **旅程作成と順序変更:** 
+    - 気になる観光地を旅程リストに追加できます。
+    - 「▲」「▼」ボタンで訪問順序を自由に入れ替えることができます。
+- **ルート表示:** 設定した出発点と旅程リストを基に、最適な移動ルートを計算して地図上に描画します。
+
+## セットアップ方法
+
+プロジェクトをローカル環境で実行するための手順です。
+
+### 1. 依存関係のインストール
+
+プロジェクトのルートディレクトリで、以下のコマンドを実行して必要なライブラリをインストールします。
+
+```sh
+npm install
+```
+
+### 2. Google Maps API キーの設定
+
+このアプリケーションは地図機能のために Google Maps Platform API を利用します。
+
+1.  プロジェクトのルートディレクトリに `.env` という名前のファイルを作成します。
+2.  ファイル内に以下の内容を記述し、`'あなたのAPIキー'` の部分をご自身の有効な Google Maps API キーに置き換えてください。
+
+    ```
+    REACT_APP_GOOGLE_MAPS_API_KEY='あなたのAPIキー'
+    ```
+
+    API キーは [Google Cloud Console](https://console.cloud.google.com/google/maps-apis/overview) から取得できます。
+
+## 利用可能なスクリプト
+
+プロジェクトディレクトリで、以下のコマンドが利用できます。
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+開発モードでアプリケーションを起動します。
+ブラウザで [http://localhost:3000](http://localhost:3000) を開くと、アプリケーションが表示されます。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ソースコードを編集すると、ページは自動的にリロードされます。
+文法エラーなどはコンソールに表示されます。
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+本番環境向けのアプリケーションを `build` フォルダにビルドします。
+React が本番モードでバンドルされ、最高のパフォーマンスが出るようにビルドが最適化されます。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ビルドされたファイルは圧縮され、ファイル名にはハッシュが含まれます。
+これでアプリケーションをデプロイする準備が整いました。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+詳細は [deployment](https://facebook.github.io/create-react-app/docs/deployment) に関するセクションを参照してください。
 
-### `npm run eject`
+### `npm test`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+対話的なウォッチモードでテストランナーを起動します。
+詳細は [running tests](https://facebook.github.io/create-react-app/docs/running-tests) に関するセクションを参照してください。
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## さらに詳しく
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+より詳細は [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) を参照してください。
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+React について学ぶには、[React documentation](https://reactjs.org/) を確認してください。
