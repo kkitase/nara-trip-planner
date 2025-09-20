@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Itinerary = ({ startPoint, itinerary, onMoveSpot, onSaveItinerary, onClearItinerary }) => {
+const Itinerary = ({ startPoint, itinerary, onMoveSpot, onSaveItinerary, onClearItinerary, onOptimizeItinerary, currentPlanName }) => {
   return (
     <div className="mb-4">
-      <h2 className="h5">旅程</h2>
+      <h2 className="h5">旅程 {currentPlanName ? `(${currentPlanName})` : '(新規)'}</h2>
       <ul className="list-group">
         {startPoint && (
           <li className="list-group-item list-group-item-info">
@@ -42,6 +42,9 @@ const Itinerary = ({ startPoint, itinerary, onMoveSpot, onSaveItinerary, onClear
         <div className="mt-3">
           <button className="btn btn-primary me-2" onClick={onSaveItinerary}>
             旅程を保存
+          </button>
+          <button className="btn btn-info me-2" onClick={onOptimizeItinerary}>
+            最適ルートを計算
           </button>
           <button className="btn btn-danger" onClick={onClearItinerary}>
             旅程をクリア
